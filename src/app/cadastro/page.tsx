@@ -47,7 +47,7 @@ export default function CadastroPage() {
           Entrar
         </Link>
 
-        <Link href="#" className="w-fit text-sm text-zinc-400 hover:underline">
+        <Link href="/esqueci-senha" className="w-fit text-sm text-zinc-400 hover:underline">
           Esqueci minha senha.
         </Link>
       </div>

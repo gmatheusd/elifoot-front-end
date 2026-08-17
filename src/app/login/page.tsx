@@ -50,7 +50,7 @@ export default function LoginPage() {
         </div>
 
         <div className="flex items-center justify-between px-1 text-sm">
-          <Link href="#" className="text-zinc-300 transition-colors hover:text-white">
+          <Link href="/esqueci-senha" className="text-zinc-300 transition-colors hover:text-white">
             Recuperar minha senha
           </Link>
           <Link href="/cadastro" className="font-medium text-brand transition-colors hover:text-brand/80">
