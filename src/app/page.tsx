@@ -1,21 +1,20 @@
-import { ButtonLink } from "@/components/atoms/Button";
+import type { Metadata } from "next";
+import { LoginForm } from "@/components/organisms/LoginForm";
 import { CenteredDarkTemplate } from "@/components/templates/CenteredDarkTemplate";
+
+export const metadata: Metadata = {
+  title: "Login Elifoot",
+};
 
 export default function Home() {
   return (
     <CenteredDarkTemplate>
-      <p className="max-w-md text-center text-zinc-400">
-        O clássico jogo de gerenciamento de futebol, de volta.
-      </p>
-
-      <div className="flex gap-4">
-        <ButtonLink href="/login" variant="solid-white">
-          Entrar
-        </ButtonLink>
-        <ButtonLink href="/cadastro" variant="outline-zinc">
-          Criar conta
-        </ButtonLink>
+      <div>
+        <h1 className="text-2xl font-bold text-white sm:text-3xl">Bem-vindo de volta!</h1>
+        <p className="mt-2 text-zinc-400">Acesse a sua conta</p>
       </div>
+
+      <LoginForm />
     </CenteredDarkTemplate>
   );
 }

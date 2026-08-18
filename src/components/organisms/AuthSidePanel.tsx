@@ -18,7 +18,7 @@ export function AuthSidePanel({ title, subtitle, children }: AuthSidePanelProps)
         <p className="mt-2 text-sm text-zinc-400">{subtitle}</p>
       </div>
 
-      <ButtonLink href="/login" variant="outline-white">
+      <ButtonLink href="/" variant="outline-white">
         Entrar
       </ButtonLink>
 
