@@ -1,7 +1,14 @@
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ComponentProps } from "react";
 
-export type ButtonVariant = "brand" | "dark" | "outline-white" | "solid-white" | "outline-zinc";
+export type ButtonVariant =
+  | "brand"
+  | "dark"
+  | "outline-white"
+  | "solid-white"
+  | "outline-zinc"
+  | "pill-outline"
+  | "pill-muted";
 
 const variantClasses: Record<ButtonVariant, string> = {
   brand:
@@ -13,6 +20,10 @@ const variantClasses: Record<ButtonVariant, string> = {
     "rounded-md bg-white px-6 py-2 font-medium text-black transition-colors hover:bg-zinc-200",
   "outline-zinc":
     "rounded-md border border-zinc-700 px-6 py-2 font-medium text-white transition-colors hover:bg-zinc-900",
+  "pill-outline":
+    "inline-block rounded-xl border-2 border-white px-8 py-4 text-base font-bold text-white transition-colors hover:bg-white hover:text-black",
+  "pill-muted":
+    "inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 text-sm text-zinc-400 transition-colors hover:border-zinc-500 hover:text-white",
 };
 
 type ButtonProps = { variant: ButtonVariant } & ButtonHTMLAttributes<HTMLButtonElement>;
