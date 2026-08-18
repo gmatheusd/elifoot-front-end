@@ -15,13 +15,13 @@ export default function Home() {
       </div>
 
       <div className="flex flex-wrap justify-center gap-4">
-        <ButtonLink href="/dash/estadio" variant="pill-outline">
+        <ButtonLink href="/dash/estadio/cadastro" variant="pill-outline">
           Cadastrar Estádio
         </ButtonLink>
-        <ButtonLink href="/dash/clube" variant="pill-outline">
+        <ButtonLink href="/dash/clube/cadastro" variant="pill-outline">
           Cadastrar Clube
         </ButtonLink>
-        <ButtonLink href="/dash/jogador" variant="pill-outline">
+        <ButtonLink href="/dash/jogador/cadastro" variant="pill-outline">
           Cadastrar Jogador
         </ButtonLink>
       </div>
