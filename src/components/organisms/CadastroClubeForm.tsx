@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/atoms/Button";
 import { CalendarIcon, ImageIcon, ShieldIcon, StadiumIcon } from "@/components/atoms/icons";
-import { FileField } from "@/components/molecules/FileField";
+import { CadastroSuccess } from "@/components/organisms/CadastroSuccess";
 import { InputField } from "@/components/molecules/InputField";
 import { SelectField } from "@/components/molecules/SelectField";
 
@@ -14,6 +15,8 @@ const ESTADIOS = [
 ];
 
 export function CadastroClubeForm() {
+  const [submitted, setSubmitted] = useState(false);
+
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -24,6 +27,11 @@ export function CadastroClubeForm() {
       imagem: formData.get("imagem"),
       estadioId: formData.get("estadioId"),
     });
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return <CadastroSuccess onNovoCadastro={() => setSubmitted(false)} />;
   }
 
   return (
@@ -49,7 +57,13 @@ export function CadastroClubeForm() {
           placeholder="Data de fundação"
           required
         />
-        <FileField icon={ImageIcon} variant="dark" name="imagem" label="Imagem" />
+        <InputField
+          icon={ImageIcon}
+          variant="dark"
+          type="url"
+          name="imagem"
+          placeholder="URL da Imagem"
+        />
       </div>
 
       <SelectField

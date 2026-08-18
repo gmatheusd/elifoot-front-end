@@ -4,6 +4,7 @@ import type { ButtonHTMLAttributes, ComponentProps } from "react";
 export type ButtonVariant =
   | "brand"
   | "brand-block"
+  | "brand-pill"
   | "dark"
   | "outline-white"
   | "solid-white"
@@ -16,6 +17,8 @@ const variantClasses: Record<ButtonVariant, string> = {
     "rounded-2xl bg-brand px-16 py-4 text-sm font-bold text-black transition-colors hover:bg-brand/90",
   "brand-block":
     "w-full rounded-2xl bg-brand py-4 text-sm font-bold text-black transition-colors hover:bg-brand/90",
+  "brand-pill":
+    "inline-block rounded-xl bg-brand px-8 py-4 text-base font-bold text-black transition-colors hover:bg-brand/90",
   dark: "w-full rounded-2xl bg-zinc-900 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-zinc-700",
   "outline-white":
     "inline-block w-fit rounded-xl border-2 border-white px-10 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-black",

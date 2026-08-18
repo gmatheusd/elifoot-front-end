@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/atoms/Button";
 import { LocationIcon, StadiumIcon, ImageIcon, UsersIcon } from "@/components/atoms/icons";
-import { FileField } from "@/components/molecules/FileField";
+import { CadastroSuccess } from "@/components/organisms/CadastroSuccess";
 import { InputField } from "@/components/molecules/InputField";
 import { SelectField } from "@/components/molecules/SelectField";
 
@@ -22,6 +23,8 @@ const CAPACIDADES = [
 ];
 
 export function CadastroEstadioForm() {
+  const [submitted, setSubmitted] = useState(false);
+
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -32,6 +35,11 @@ export function CadastroEstadioForm() {
       capacidade: formData.get("capacidade"),
       imagem: formData.get("imagem"),
     });
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return <CadastroSuccess onNovoCadastro={() => setSubmitted(false)} />;
   }
 
   return (
@@ -66,7 +74,13 @@ export function CadastroEstadioForm() {
           options={CAPACIDADES}
           required
         />
-        <FileField icon={ImageIcon} variant="dark" name="imagem" label="Imagem" />
+        <InputField
+          icon={ImageIcon}
+          variant="dark"
+          type="url"
+          name="imagem"
+          placeholder="URL da Imagem"
+        />
       </div>
 
       <Button type="submit" variant="brand-block" className="mt-2">
